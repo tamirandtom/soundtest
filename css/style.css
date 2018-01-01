@@ -45,7 +45,7 @@ h1 {
 h2 {
     font-size: 20px;
     line-height:28px;
-    color:#ffff00;
+    color:#F4E95E;
     font-weight:200;
 }
 
@@ -57,8 +57,8 @@ h3 {
 }
 
 h4 {
-    font-size: 24px;
-    line-height:28px;
+    font-size: 20px;
+    line-height:24px;
     color:#fff;
     font-weight:200;
 }
@@ -96,7 +96,7 @@ h5 {
     direction:rtl;
     display:flex;
     flex-direction: row;
-    height:650px;
+    height:500px;
 }
 .side-50-left, .side-50-right {
     width:50%;
@@ -130,7 +130,7 @@ max-width:900px;
 .quote-unit {
     margin-bottom:24px;
     padding-bottom:24px;
-    border-bottom:1px solid #ff0;
+    border-bottom:1px solid #F4E95E;
     margin-left:48px;
 }
 .quote-block {
@@ -141,7 +141,7 @@ max-width:900px;
 .third-section {
     display:flex;
     flex-direction: row;
-    height:650px;
+    height:500px;
 }
 .image-divider {
     height:200px;
@@ -159,7 +159,7 @@ max-width:900px;
     display:inline-block;
     font-size:14px;
     line-height:14px;
-    color:#ff0;
+    color:#F4E95E;
     text-decoration:none;
 }
 
@@ -187,7 +187,7 @@ max-width:900px;
 
 .credits-end {
     margin-top:40px;
-    background:#ff0;
+    background:#F4E95E;
     font-style:14px;
     height:40px;
     display: flex;
