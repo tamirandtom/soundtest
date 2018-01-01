@@ -1,0 +1,273 @@
+/*
+CSS file created with:Instantblueprint - Create a web project framework in seconds.
+http://instantblueprint.com
+Project: Simple
+File: css/style.css
+Last edited: January 16, 2016, 5:52 pm
+*/
+
+/*  Main  */
+* {font-family: 'simpler'; box-sizing:border-box;}
+body {
+ background:#FFF;
+ color:#000;
+ font-family: 'simpler' Arial, Helvetica, sans-serif;
+ font-size: 14px;
+ line-height:18px;
+}
+
+.wrapper {
+ margin:auto auto;
+ padding: 0 16px;
+ width:100%; 
+ max-width:960px; /*  Change to desired width :)  */
+}
+
+.background-black {
+background: #000;
+}
+
+
+.divider {
+    height:1px;
+    background:#EF4132;
+    margin-top:32px;
+    margin-bottom:32px;
+}
+/* fonts */
+h1 {
+    font-size: 24px;
+    line-height:32px;
+    color:#000;
+    font-weight:200;
+    margin-bottom:24px;
+}
+h2 {
+    font-size: 20px;
+    line-height:28px;
+    color:#ffff00;
+    font-weight:200;
+}
+
+h3 {
+    font-size: 16px;
+    line-height:24px;
+    color:#000;
+    font-weight:700;
+}
+
+h4 {
+    font-size: 24px;
+    line-height:28px;
+    color:#fff;
+    font-weight:200;
+}
+h5 {
+    font-size: 16px;
+    line-height:24px;
+    color:#fff;
+    font-style: italic;
+    font-weight:400;
+}
+.button {
+    font-size: 16px;
+    line-height:24px;
+    color:#EF4132;
+    font-weight:700;
+    padding: 12px 32px;
+    border:2px solid #EF4132;
+    margin-top:32px;
+    display:inline-block;
+    border-radius: 30px;
+    text-decoration:none;
+    text-align:center;
+    transition: all .2s ease-in-out;
+}
+.button:hover {
+    background: #EF4132;
+    color:#fff;
+}
+
+
+/* sections */
+
+
+.intro {
+    direction:rtl;
+    display:flex;
+    flex-direction: row;
+    height:650px;
+}
+.side-50-left, .side-50-right {
+    width:50%;
+}
+.black-section {
+    background:#000;
+    padding-top:32px;
+    padding-bottom:32px;
+    display:flex;
+    flex-direction: row;
+}
+
+.dir-rtl {
+    direction:rtl; text-align:right;
+}
+.carrousel {
+width:90%;
+max-width:900px;
+ margin: auto auto;
+}
+
+/* .slick-track {
+    height: 400px;
+} */
+
+
+
+.carousel-img {
+    height: 400px;
+}
+.quote-unit {
+    margin-bottom:24px;
+    padding-bottom:24px;
+    border-bottom:1px solid #ff0;
+    margin-left:48px;
+}
+.quote-block {
+    margin-bottom:24px;
+    margin-left:48px;
+    
+}
+.third-section {
+    display:flex;
+    flex-direction: row;
+    height:650px;
+}
+.image-divider {
+    height:200px;
+    background:url("../images/waves.svg");
+    background-size:cover;
+}
+.image-divider-2 {
+    height:200px;
+    background:url("../images/waves2.svg");
+    background-size:cover;
+    
+}
+.black-link {
+    margin-top:8px;
+    display:inline-block;
+    font-size:14px;
+    line-height:14px;
+    color:#ff0;
+    text-decoration:none;
+}
+
+.forth-section {
+    display:flex;
+    flex-direction: row;
+}
+
+.sixth-section {
+    display:flex;
+    flex-direction: row;
+ 
+}
+
+.credits-block {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;   
+}
+.credits-text {
+    padding:0 24px;
+    text-align:center;
+}
+
+.credits-end {
+    margin-top:40px;
+    background:#ff0;
+    font-style:14px;
+    height:40px;
+    display: flex;
+    align-items:center;
+    justify-content:center
+}
+
+/* images
+ */
+
+ .main-title {
+     margin-bottom:24px;
+     position: relative;
+     /* right:-16px; */
+ }
+
+ .image-top {
+     width:80%;
+     max-width:597px;
+ }
+/* MISC
+ */
+ .padding-32 {
+    padding:32px 0;
+}
+ .max-width-500 {
+     max-width:500px;
+ }
+
+ .intro .side-50-left {
+     text-align:left;
+ }
+
+ .flex-center {
+    align-items: center;
+    justify-content: center;
+    display:flex;
+}
+.align-center {
+    text-align:center;
+    margin: auto auto;
+}
+
+.image-bottom {max-width:499px;width:70%;}
+
+@media (max-width: 600px) { 
+* {
+    text-align:center;
+}
+    .side-50-left, .side-50-right {
+        width:100%;
+    }
+    
+.black-section, .intro, .third-section, .forth-section, .sixth-section  {
+    flex-direction:column;
+}
+.intro, .third-section {
+    flex-direction: column-reverse;
+    height:auto;
+    text-align:center;
+ }
+ .intro {
+     margin-bottom: 40px;
+ }
+ .forth-section {
+     padding:0px 32px;
+ }
+ .image-top {max-width:180px;}
+ .image-bottom {max-width:180px;margin-top:32px;}
+
+ .quote-unit {
+    margin-left:0px;
+}
+.quote-block {
+    margin-left:0px;
+    
+}
+
+h1,h2,h3,h4,h5,h6 {
+    text-align:center;
+}
+ }
+
