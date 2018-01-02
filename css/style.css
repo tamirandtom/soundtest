@@ -36,10 +36,10 @@ background: #000;
 }
 /* fonts */
 h1 {
-    font-size: 24px;
+    font-size: 32px;
     line-height:32px;
-    color:#000;
-    font-weight:200;
+    color:#488FCC;
+    font-weight:700;
     margin-bottom:24px;
 }
 h2 {
@@ -70,6 +70,7 @@ h5 {
     font-weight:400;
 }
 .button {
+    cursor: pointer;
     font-size: 16px;
     line-height:24px;
     color:#EF4132;
@@ -136,8 +137,8 @@ max-width:900px;
 
 
 .carousel-img {
-    height: 50vw;
-    max-height:470px;
+    height: 62vw;
+    max-height:558px;
     background-size:cover;
 }
 .quote-unit {
@@ -270,10 +271,13 @@ max-width:900px;
  .intro {
      margin-bottom: 40px;
  }
+ .intro .side-50-left {
+    text-align:center;
+}
  .forth-section {
      padding:0px 32px;
  }
- .image-top {max-width:180px;}
+ .image-top {max-width:140px;}
  .image-bottom {max-width:180px;margin-top:32px;}
 
  .quote-unit {

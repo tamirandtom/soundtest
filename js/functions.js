@@ -10,5 +10,13 @@ $(document).ready(function() {
         cssEase: 'linear',
         arrows: false
     });
+
+    $( ".button" ).click(function() {
+    $('body').scrollTo('.third-section','3s');
+        
+      });
+
+
+
     
 });
