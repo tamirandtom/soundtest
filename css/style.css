@@ -45,7 +45,7 @@ h1 {
 h2 {
     font-size: 20px;
     line-height:28px;
-    color:#F4E95E;
+    color:#FCD813;
     font-weight:200;
 }
 
@@ -83,11 +83,22 @@ h5 {
     text-align:center;
     transition: all .2s ease-in-out;
 }
+.button.blue {
+    color:#fff;
+    border:2px solid #488FCC;  
+    background:#488FCC;
+}
+
+
 .button:hover {
     background: #EF4132;
     color:#fff;
 }
 
+.button.blue:hover {
+    border:2px solid #63B0F2;  
+    background:#63B0F2;
+}
 
 /* sections */
 
@@ -125,12 +136,14 @@ max-width:900px;
 
 
 .carousel-img {
-    height: 400px;
+    height: 50vw;
+    max-height:470px;
+    background-size:cover;
 }
 .quote-unit {
     margin-bottom:24px;
     padding-bottom:24px;
-    border-bottom:1px solid #F4E95E;
+    border-bottom:1px solid #FCD813;
     margin-left:48px;
 }
 .quote-block {
@@ -147,6 +160,8 @@ max-width:900px;
     height:200px;
     background:url("../images/waves.svg");
     background-size:cover;
+    position: relative;
+    top: 2px;
 }
 .image-divider-2 {
     height:200px;
@@ -159,7 +174,7 @@ max-width:900px;
     display:inline-block;
     font-size:14px;
     line-height:14px;
-    color:#F4E95E;
+    color:#FCD813;
     text-decoration:none;
 }
 
@@ -187,7 +202,7 @@ max-width:900px;
 
 .credits-end {
     margin-top:40px;
-    background:#F4E95E;
+    background:#FCD813;
     font-style:14px;
     height:40px;
     display: flex;
@@ -241,8 +256,11 @@ max-width:900px;
         width:100%;
     }
     
-.black-section, .intro, .third-section, .forth-section, .sixth-section  {
+.black-section, .intro, .third-section, .forth-section {
     flex-direction:column;
+}
+.sixth-section {
+    flex-direction: column-reverse
 }
 .intro, .third-section {
     flex-direction: column-reverse;
