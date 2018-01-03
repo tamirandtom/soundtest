@@ -8,6 +8,12 @@ Last edited: January 16, 2016, 5:52 pm
 
 /*  Main  */
 * {font-family: 'simpler'; box-sizing:border-box;}
+
+a {
+    text-decoration: none;
+    color:#000;
+    font-weight: 700;
+}
 body {
  background:#FFF;
  color:#000;
@@ -50,10 +56,10 @@ h2 {
 }
 
 h3 {
-    font-size: 16px;
+    font-size: 25px;
     line-height:24px;
     color:#000;
-    font-weight:700;
+    font-weight:200;
 }
 
 h4 {
@@ -69,13 +75,28 @@ h5 {
     font-style: italic;
     font-weight:400;
 }
+
+h6 {
+    font-size: 16px;
+    line-height:24px;
+    color:#000;
+    font-weight:400;
+}
+
+h7 {
+    font-size: 16px;
+    line-height:24px;
+    color:#000;
+    font-weight:400;
+}
+
 .button {
     cursor: pointer;
     font-size: 16px;
     line-height:24px;
     color:#EF4132;
     font-weight:700;
-    padding: 12px 32px;
+    padding: 12px 48px;
     border:2px solid #EF4132;
     margin-top:32px;
     display:inline-block;
@@ -108,7 +129,7 @@ h5 {
     direction:rtl;
     display:flex;
     flex-direction: row;
-    height:500px;
+    height:470px;
 }
 .side-50-left, .side-50-right {
     width:50%;
@@ -263,6 +284,16 @@ max-width:900px;
 .sixth-section {
     flex-direction: column-reverse
 }
+.credits-block {
+    margin-top: 24px;
+    flex-direction: column;
+}
+.credits-block--2 {
+    flex-direction: column-reverse;
+}
+.main-title{
+    margin-bottom:4px;
+}
 .intro, .third-section {
     flex-direction: column-reverse;
     height:auto;
@@ -291,5 +322,15 @@ max-width:900px;
 h1,h2,h3,h4,h5,h6 {
     text-align:center;
 }
+
+h3 {
+    font-size:18px;
+}
+
+.credits-end {
+    display:block;
+    text-align: center;
+}
  }
+
 
