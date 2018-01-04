@@ -265,6 +265,8 @@ h7 {
     margin-bottom: 24px;
     position: relative;
     /* right:-16px; */
+    width:100%;
+    max-width: 367px;
 }
 
 .image-top {
@@ -330,7 +332,9 @@ h7 {
     }
     .main-title {
         margin-bottom: 4px;
-        width: 250px;
+        margin-top: 190px;
+        max-width: 290px;
+        
     }
     .intro,
     .third-section {
@@ -349,6 +353,10 @@ h7 {
     }
     .image-top {
         max-width: 200px;
+      
+    position: absolute;
+    top: -40px;
+    left: calc(50% - 100px);
     }
     .image-bottom {
         max-width: 180px;
@@ -374,5 +382,7 @@ h7 {
     .credits-end {
         display: block;
         text-align: center;
+        height:auto;
+        padding:24px 0;
     }
 }
