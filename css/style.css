@@ -310,6 +310,9 @@ h7 {
     * {
         text-align: center;
     }
+    .hide-on-mobile {
+        display: none;
+    }
     .side-50-left,
     .side-50-right {
         width: 100%;
@@ -352,11 +355,11 @@ h7 {
         padding: 0px 32px;
     }
     .image-top {
-        max-width: 200px;
+        max-width: 230px;
       
     position: absolute;
     top: -40px;
-    left: calc(50% - 100px);
+    left: calc(50% - 115px);
     }
     .image-bottom {
         max-width: 180px;
