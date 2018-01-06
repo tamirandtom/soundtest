@@ -59,8 +59,10 @@ body {
 h1 {
     font-size: 32px;
     line-height: 32px;
-    color: #488FCC;
-    font-weight: 700;
+    color: #EF4132;
+    font-weight: 400;
+    border-bottom: 3px solid #EF4132;
+    display:inline-block;
     margin-bottom: 24px;
 }
 
@@ -72,10 +74,10 @@ h2 {
 }
 
 h3 {
-    font-size: 25px;
+    font-size: 18px;
     line-height: 24px;
     color: #000;
-    font-weight: 200;
+    font-weight: 700;
 }
 
 h4 {
@@ -208,6 +210,9 @@ h7 {
     background-size: cover;
     position: relative;
     top: 2px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
 }
 
 .image-divider-2 {
@@ -249,7 +254,7 @@ h7 {
 
 .credits-end {
     margin-top: 40px;
-    background: #FCD813;
+    background: #ffe202;
     font-style: 14px;
     height: 40px;
     display: flex;
@@ -262,15 +267,15 @@ h7 {
  */
 
 .main-title {
-    margin-bottom: 24px;
+    margin-bottom:8px;
     position: relative;
     /* right:-16px; */
     width:100%;
-    max-width: 367px;
+    max-width: 270px;
 }
 
 .image-top {
-    width: 80%;
+    width: 90%;
     max-width: 597px;
 }
 
@@ -279,7 +284,7 @@ h7 {
  */
 
 .padding-32 {
-    padding: 32px 0;
+    padding: 32px 0 0 0;
 }
 
 .max-width-500 {
@@ -296,6 +301,12 @@ h7 {
     display: flex;
 }
 
+.flex-right {
+    align-items: center;
+    justify-content: right;
+    display: flex;
+}
+
 .align-center {
     text-align: center;
     margin: auto auto;
@@ -305,13 +316,27 @@ h7 {
     max-width: 499px;
     width: 70%;
 }
+.show-on-mobile {
+    display: none;
+}
 
 @media (max-width: 600px) {
     * {
         text-align: center;
     }
+
+    .flex-right {
+
+        justify-content: center;
+
+    }
+
+
     .hide-on-mobile {
         display: none;
+    }
+    .show-on-mobile {
+        display: inline-block;
     }
     .side-50-left,
     .side-50-right {
@@ -388,4 +413,8 @@ h7 {
         height:auto;
         padding:24px 0;
     }
+}
+
+.slick-dots li {
+    top: 12px;
 }
