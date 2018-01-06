@@ -352,7 +352,7 @@ h7 {
         flex-direction: column-reverse
     }
     .credits-block {
-        margin-top: 24px;
+        margin-top: 0px;
         flex-direction: column;
     }
     .credits-block--2 {
