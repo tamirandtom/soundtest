@@ -12,7 +12,7 @@ $(document).ready(function() {
     });
 
     $( ".button" ).click(function() {
-    $('body').scrollTo('.third-section','3s');
+    $('body').scrollTo('.third-section','2s');
         
       });
 
