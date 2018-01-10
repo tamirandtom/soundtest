@@ -284,7 +284,7 @@ h7 {
  */
 
 .padding-32 {
-    padding: 32px 0 0 0;
+    padding: 32px 0;
 }
 
 .max-width-500 {
@@ -324,7 +324,13 @@ h7 {
     * {
         text-align: center;
     }
-
+    .padding-top-32 {
+    padding-top:32px;
+    }
+.text-middle {
+    padding:24px 0 0 0;
+    font-size: 16px;
+}
     .flex-right {
 
         justify-content: center;
@@ -363,6 +369,10 @@ h7 {
         margin-top: 190px;
         max-width: 290px;
         
+    }
+    .wrapper
+    {
+        text-align: left;
     }
     .intro,
     .third-section {
