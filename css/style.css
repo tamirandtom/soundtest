@@ -67,7 +67,7 @@ h1 {
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 28px;
     color: #ffe202;
     font-weight: 200;
@@ -81,7 +81,7 @@ h3 {
 }
 
 h4 {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 24px;
     color: #fff;
     font-weight: 200;
@@ -382,7 +382,7 @@ h7 {
     }
     .wrapper
     {
-        padding: 0 16px;
+        padding: 0 24px;
         text-align: right;
     }
     .intro,
