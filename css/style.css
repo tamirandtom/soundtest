@@ -109,6 +109,10 @@ h7 {
     font-weight: 400;
 }
 
+button {
+    -webkit-appearance: none;
+
+}
 .button {
     cursor: pointer;
     font-size: 16px;
@@ -219,6 +223,7 @@ h7 {
     height: 200px;
     background: url("../images/waves2.svg");
     background-size: cover;
+    background-position-y: 60%;
 }
 
 .black-link {
