@@ -12,11 +12,12 @@ $(document).ready(function() {
     });
 
     $( ".button" ).click(function() {
-    $('body').scrollTo('.third-section','2s');
-        
+    $('html, body').animate({
+        scrollTop: $(".third-section").offset().top
+     }, 1500);
+
       });
 
-
-
+  
     
 });
