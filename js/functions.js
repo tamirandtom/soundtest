@@ -9,7 +9,14 @@ $(document).ready(function() {
         autoplaySpeed: 2000,
         cssEase: 'linear',
         arrows: false,
-        pauseOnHover: false
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        draggable: false,
+        swipe: false,
+        swipeToSlide: false,
+        touchMove: false,
+        draggable: false,
+        accessibility: false
     });
 
 
