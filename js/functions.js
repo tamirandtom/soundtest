@@ -20,11 +20,11 @@ camera.add( listener );
 var sound = new THREE.PositionalAudio( listener );
 var oscillator = listener.context.createOscillator();
 oscillator.type = 'sine';
-oscillator.frequency.setValueAtTime( 144, sound.context.currentTime );
+oscillator.frequency.setValueAtTime( 440, sound.context.currentTime );
 oscillator.start( 0 );
 sound.setNodeSource( oscillator );
-sound.setRefDistance( 20 );
-sound.setVolume( 0.5 );
+sound.setRefDistance( 1 );
+sound.setVolume( 1 );
 cube.add( sound );
 
 
