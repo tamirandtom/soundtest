@@ -1,40 +1,44 @@
-$(document).ready(function() { 
-   
-    $(".carrousel").slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        fade: true,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        cssEase: 'linear',
-        arrows: false,
-        pauseOnHover: false,
-        pauseOnFocus: false,
-        draggable: false,
-        swipe: false,
-        swipeToSlide: false,
-        touchMove: false,
-        draggable: false,
-        accessibility: false
-    });
+var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+			var material = new THREE.MeshBasicMaterial( { color: 0xFFFFFF } );
+			var cube = new THREE.Mesh( geometry, material );
+			scene.add( cube );
+
+			camera.position.z = 5;
+
+            // create an AudioListener and add it to the camera
+var listener = new THREE.AudioListener();
+camera.add( listener );
+
+// create the PositionalAudio object (passing in the listener)
+var sound = new THREE.PositionalAudio( listener );
+var oscillator = listener.context.createOscillator();
+oscillator.type = 'sine';
+oscillator.frequency.setValueAtTime( 144, sound.context.currentTime );
+oscillator.start( 0 );
+sound.setNodeSource( oscillator );
+sound.setRefDistance( 20 );
+sound.setVolume( 0.5 );
+cube.add( sound );
 
 
-    $('.carrousel').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        $('.carrousel .slick-dots li').removeClass('slick-active').attr('aria-hidden','true');
-        $('.carrousel .slick-dots li button').focus(function() {
-        this.blur();
-        });
-        });
+var controls = new THREE.DeviceOrientationControls( camera );
 
 
-    $( ".button" ).click(function() {
-    $('html, body').animate({
-        scrollTop: $(".third-section").offset().top
-     }, 1500);
+			var animate = function () {
+				requestAnimationFrame( animate );
+                controls.update();
 
-      });
+				cube.position.x += 0.01;
+				cube.rotation.y += 0.01;
 
-  
-    
-});
+				renderer.render( scene, camera );
+			};
+
+			animate();
