@@ -38,8 +38,7 @@ function createFlyingObject() {
 	if (!created) {
 		createSound();
 	}
-	oscillator.frequency.setValueAtTime(Math.round((Math.random()*100))+100, sound.context.currentTime);
-	oscillator.start(0);
+	oscillator.frequency.setValueAtTime(Math.round((Math.random()*100))+150, sound.context.currentTime);
 	cube.position.z = -50;
 	cube.position.x = Math.round((Math.random()*40))-20;
 	cube.position.y = Math.round((Math.random()*40))-20;
@@ -50,9 +49,9 @@ window.addEventListener('touchstart', function () {
 	createFlyingObject();
 }, false);
 
-// window.addEventListener('click', function () {
-// 	createFlyingObject();
-// }, false);
+window.addEventListener('click', function () {
+	createFlyingObject();
+}, false);
 
 
 
@@ -64,11 +63,10 @@ var controls = new THREE.DeviceOrientationControls(camera);
 var animate = function () {
 	requestAnimationFrame(animate);
 	controls.update();
-	cube.position.z += 0.1;
+	cube.position.z += 0.3;
 	if (cube.position.z > 50)
 	{
 	cube.position.z = -50;
-
 	}
 
 	renderer.render(scene, camera);
