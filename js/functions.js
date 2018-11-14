@@ -7,22 +7,20 @@ document.body.appendChild(renderer.domElement);
 var audioFile = '1.mp3';
 var geometry = new THREE.BoxGeometry(1, 1, 1);
 var material = new THREE.MeshBasicMaterial({
-	color: 0x0000FF
+	color: 0xff0000
 });
 var cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
-camera.position.z = 5;
+camera.position.z = 0;
 
-// create an AudioListener and add it to the camera
 var listener = new THREE.AudioListener();
 camera.add(listener);
 
-// create the PositionalAudio object (passing in the listener)
 
+var created = false;
 
-
-window.addEventListener('touchstart', function() {
+function createSound() {
 	var sound = new THREE.PositionalAudio(listener);
 	var oscillator = listener.context.createOscillator();
 	oscillator.type = 'sine';
@@ -32,9 +30,24 @@ window.addEventListener('touchstart', function() {
 	sound.setRefDistance(1);
 	sound.setVolume(1);
 	cube.add(sound);
+	created = true;
+}
+
+function createFlyingObject() {
+	if (!created) {
+		createSound();
+	}
+	cube.position.z = 0;
+}
 
 
+window.addEventListener('touchstart', function () {
+	createFlyingObject();
 }, false);
+
+// window.addEventListener('click', function () {
+// 	createFlyingObject();
+// }, false);
 
 
 
@@ -46,7 +59,7 @@ var controls = new THREE.DeviceOrientationControls(camera);
 var animate = function () {
 	requestAnimationFrame(animate);
 	controls.update();
-	cube.rotation.y += 0.02;
+	cube.position.z -= 0.05;
 
 	renderer.render(scene, camera);
 };
