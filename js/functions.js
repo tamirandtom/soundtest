@@ -19,10 +19,11 @@ camera.add(listener);
 
 
 var created = false;
+var sound = new THREE.PositionalAudio(listener);
+	var oscillator = listener.context.createOscillator();
 
 function createSound() {
-	var sound = new THREE.PositionalAudio(listener);
-	var oscillator = listener.context.createOscillator();
+	
 	oscillator.type = 'sine';
 	oscillator.frequency.setValueAtTime(440, sound.context.currentTime);
 	oscillator.start(0);
@@ -37,7 +38,11 @@ function createFlyingObject() {
 	if (!created) {
 		createSound();
 	}
-	cube.position.z = 0;
+	oscillator.frequency.setValueAtTime(Math.round((Math.random()*100))+100, sound.context.currentTime);
+	oscillator.start(0);
+	cube.position.z = -50;
+	cube.position.x = Math.round((Math.random()*40))-20;
+	cube.position.y = Math.round((Math.random()*40))-20;
 }
 
 
@@ -59,7 +64,12 @@ var controls = new THREE.DeviceOrientationControls(camera);
 var animate = function () {
 	requestAnimationFrame(animate);
 	controls.update();
-	cube.position.z -= 0.05;
+	cube.position.z += 0.1;
+	if (cube.position.z > 50)
+	{
+	cube.position.z = -50;
+
+	}
 
 	renderer.render(scene, camera);
 };
