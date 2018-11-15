@@ -18,6 +18,9 @@ var material = new THREE.MeshBasicMaterial({
 var cube = new THREE.Mesh(geometry, material);
 
 
+var raycaster = new THREE.Raycaster();
+var mouse = new THREE.Vector2();
+
 
 scene.add(cube);
 camera.position.z = 0;
@@ -57,25 +60,44 @@ function createFlyingObject() {
 }
 
 
+cube.callback = function() { createFlyingObject(); }
+
+
 // Start on touch
 window.addEventListener('touchstart', function () {
-	createFlyingObject();
+	touchDetect();
 }, false);
 
 window.addEventListener('click', function () {
-	createFlyingObject();
+	touchDetect();
 }, false);
 
 
 
+function touchDetect() {
+
+	mouse.x = ( event.clientX / renderer.domElement.clientWidth ) * 2 - 1;
+	mouse.y = - ( event.clientY / renderer.domElement.clientHeight ) * 2 + 1;
+	
+	raycaster.setFromCamera( mouse, camera );
+	arr = [cube];
+	var intersects = raycaster.intersectObjects(arr); 
+	
+	if ( intersects.length > 0 ) {
+	
+		intersects[0].object.callback();
+	
+	}
+}
 
 
 
 
-camera.updateMatrix();
-camera.updateMatrixWorld();
-var frustum = new THREE.Frustum();
-frustum.setFromMatrix(new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse));  
+
+// camera.updateMatrix();
+// camera.updateMatrixWorld();
+// var frustum = new THREE.Frustum();
+// frustum.setFromMatrix(new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse));  
 
 
 
@@ -87,8 +109,8 @@ var animate = function () {
 	cube.position.z += 0.3;
 
 	// Rotate the cube
-	cube.rotation.z += 0.3;
-	cube.rotation.y += 0.1;
+	cube.rotation.z += 0.03;
+	cube.rotation.y += 0.01;
 
 	// Reset position if out of bounds
 	if (cube.position.z > 50) {
@@ -97,11 +119,11 @@ var animate = function () {
 
 
 
-	check in view
-	if (frustum.containsPoint(cube.position)) {
-		cube.material.color.setHex('0x'+Math.floor(Math.random()*16777215).toString(16)); 
+	// check in view
+	// if (frustum.containsPoint(cube.position)) {
+		// cube.material.color.setHex('0x'+Math.floor(Math.random()*16777215).toString(16)); 
 
-	}
+	// }
 
 	renderer.render(scene, camera);
 };
