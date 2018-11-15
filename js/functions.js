@@ -62,9 +62,13 @@ function createFlyingObject() {
 
 cube.callback = function() { createFlyingObject(); }
 
-
+var isInnitializes=false;
 // Start on touch
 window.addEventListener('touchstart', function () {
+	if (!isInnitializes) {
+		createFlyingObject();
+		isInnitializes=true;
+	}
 	touchDetect();
 }, false);
 
@@ -94,8 +98,8 @@ function touchDetect() {
 
 
 
-// camera.updateMatrix();
-// camera.updateMatrixWorld();
+camera.updateMatrix();
+camera.updateMatrixWorld();
 // var frustum = new THREE.Frustum();
 // frustum.setFromMatrix(new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse));  
 
