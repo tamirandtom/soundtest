@@ -50,6 +50,7 @@ function createSound() {
 
 // Create / Reset the flying box position
 function createFlyingObject() {
+	console.log('here!');
 	if (!created) {
 		createSound();
 	}
@@ -65,6 +66,7 @@ cube.callback = function() { createFlyingObject(); }
 var isInnitializes=false;
 // Start on touch
 window.addEventListener('touchstart', function () {
+	console.log('touch!');
 	if (!isInnitializes) {
 		createFlyingObject();
 		isInnitializes=true;
@@ -73,6 +75,11 @@ window.addEventListener('touchstart', function () {
 }, false);
 
 window.addEventListener('click', function () {
+	console.log('touch!');
+	if (!isInnitializes) {
+		createFlyingObject();
+		isInnitializes=true;
+	}
 	touchDetect();
 }, false);
 
