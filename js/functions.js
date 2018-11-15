@@ -60,6 +60,13 @@ window.addEventListener('click', function () {
 var controls = new THREE.DeviceOrientationControls(camera);
 
 
+camera.updateMatrix();
+camera.updateMatrixWorld();
+var frustum = new THREE.Frustum();
+frustum.setFromMatrix(new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse));  
+
+
+
 var animate = function () {
 	requestAnimationFrame(animate);
 	controls.update();
@@ -68,6 +75,15 @@ var animate = function () {
 	{
 	cube.position.z = -50;
 	}
+
+
+
+// check in view
+var pos = new THREE.Vector3(x, y, z);
+if (frustum.containsPoint(pos)) {
+	cube.material.color.setHex('0x'+Math.floor(Math.random()*16777215).toString(16)); 
+
+}
 
 	renderer.render(scene, camera);
 };
