@@ -72,6 +72,8 @@ window.addEventListener('touchstart', function () {
 		isInnitializes=true;
 	}
 	touchDetect();
+	createFlyingObject();
+
 }, false);
 
 window.addEventListener('click', function () {
