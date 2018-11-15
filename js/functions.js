@@ -79,8 +79,7 @@ var animate = function () {
 
 
 // check in view
-var pos = new THREE.Vector3(x, y, z);
-if (frustum.containsPoint(pos)) {
+if (frustum.containsPoint(cube.position)) {
 	cube.material.color.setHex('0x'+Math.floor(Math.random()*16777215).toString(16)); 
 
 }
