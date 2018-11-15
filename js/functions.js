@@ -72,10 +72,10 @@ window.addEventListener('click', function () {
 
 
 
-// camera.updateMatrix();
-// camera.updateMatrixWorld();
-// var frustum = new THREE.Frustum();
-// frustum.setFromMatrix(new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse));  
+camera.updateMatrix();
+camera.updateMatrixWorld();
+var frustum = new THREE.Frustum();
+frustum.setFromMatrix(new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse));  
 
 
 
@@ -97,11 +97,11 @@ var animate = function () {
 
 
 
-	// check in view
-	// if (frustum.containsPoint(cube.position)) {
-	// 	cube.material.color.setHex('0x'+Math.floor(Math.random()*16777215).toString(16)); 
+	check in view
+	if (frustum.containsPoint(cube.position)) {
+		cube.material.color.setHex('0x'+Math.floor(Math.random()*16777215).toString(16)); 
 
-	// }
+	}
 
 	renderer.render(scene, camera);
 };
